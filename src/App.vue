@@ -1,11 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <navigation-bar></navigation-bar>
+  <router-view></router-view>
+  <the-footer></the-footer>
 </template>
 
-<style>
+<script>
+import NavigationBar from "@/components/ui/NavigationBar.vue";
+import TheFooter from "@/components/ui/TheFooter.vue";
 
-</style>
+export default {
+  name: "App",
+  components: {
+    NavigationBar,
+    TheFooter,
+  },
+};
+</script>
