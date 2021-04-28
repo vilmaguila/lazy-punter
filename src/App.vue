@@ -6,7 +6,7 @@
 
 <script>
 import NavigationBar from "@/components/ui/NavigationBar.vue";
-import TheFooter from "@/components/ui/TheFooter.vue";
+import TheFooter from "@/components/layout/TheFooter.vue";
 
 export default {
   name: "App",
