@@ -1,7 +1,7 @@
 <template>
   <footer class="flex flex-row justify-evenly">
     <div class="">
-      <h2>Linkit</h2>
+      <h1 class="text-lg">Linkit</h1>
       <a href="https://www.google.com">Google</a>
     </div>
     <div class="">
