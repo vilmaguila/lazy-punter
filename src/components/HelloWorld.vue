@@ -12,16 +12,12 @@
 </template>
 
 <script>
-import BaseCard from "./ui/BaseCard.vue";
-
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
-  components: {
-    BaseCard,
-  },
+  components: {},
   data() {
     return {
       count: 0,

@@ -6,6 +6,7 @@
     <router-view name="default"></router-view>
     <router-view name="mission"></router-view>
     <router-view name="vision"></router-view>
+    <the-footer></the-footer>
   </div>
 </template>
 

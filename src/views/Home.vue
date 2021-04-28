@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="home">
     <navigation-bar></navigation-bar>
     <h1>Home</h1>
     <hello-world msg="Message as a prop"></hello-world>
+    <the-footer></the-footer>
   </div>
 </template>
 
