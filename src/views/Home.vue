@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-4 gap-4">
     <navigation-bar class="col-span-4"></navigation-bar>
-    <h1 class="col-span-4">Home</h1>
+    <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
     <div class="col-span-3">
       This is for main content
@@ -15,12 +15,14 @@
 <script>
 import HelloWorld from "../components/HelloWorld.vue";
 import NavigationBar from "../components/ui/NavigationBar.vue";
+import TheHero from '@/components/layout/TheHero.vue'
 
 export default {
   name: "Home",
   components: {
     HelloWorld,
     NavigationBar,
+    TheHero
   },
 };
 </script>
