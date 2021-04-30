@@ -20,6 +20,6 @@ export default {
 
 <style lang="postcss" scoped>
 .nav-item {
-  @apply px-4 text-2xl text-center hover:bg-gray-200;
+  @apply p-4 text-2xl text-center rounded-2xl hover:bg-gray-200;
 }
 </style>
