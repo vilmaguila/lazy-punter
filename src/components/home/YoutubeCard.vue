@@ -3,8 +3,8 @@
     <h2>{{ title }}</h2>
     <h3>{{ artist }}</h3>
     <iframe
-      width="20%"
-      height=""
+      width="100%"
+      height="100rem"
       :src="url"
       frameborder="0"
       allow="autoplay; encrypted-media"
