@@ -6,13 +6,13 @@
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
-    <base-avenue class="col-span-3">
+    <base-island class="col-span-3">
       <youtube-card
         v-for="item in singles"
         :key="item.id"
         v-bind="item"
       ></youtube-card>
-    </base-avenue>
+    </base-island>
     <the-footer class="col-span-4"></the-footer>
   </div>
 </template>
