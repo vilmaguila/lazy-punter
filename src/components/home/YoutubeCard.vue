@@ -1,8 +1,7 @@
 <template>
   <base-card>
-    <h2>{{ title }}</h2>
-    <h3>{{ artist }}</h3>
     <iframe
+      class="rounded-lg"
       width="100%"
       height="100rem"
       :src="url"
@@ -10,6 +9,8 @@
       allow="autoplay; encrypted-media"
       allowfullscreen
     ></iframe>
+    <p class="text-center">{{ title }}</p>
+    <p class="text-center">{{ artist }}</p>
   </base-card>
 </template>
 
