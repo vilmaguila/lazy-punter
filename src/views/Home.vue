@@ -8,7 +8,7 @@
     <div>This is for SideBar</div>
     <base-island class="col-span-3">
       <youtube-card
-        v-for="item in singles"
+        v-for="item in titles"
         :key="item.id"
         v-bind="item"
       ></youtube-card>
@@ -33,33 +33,34 @@ export default {
   },
   data() {
     return {
-      singles: [
-        {
-          id: "juoksevaan",
-          title: "Juokse Vaan",
-          artist: "Punomo",
-          url: "https://www.youtube.com/embed/vnjc2q4dTKo",
-        },
-        {
-          id: "siskot",
-          title: "Siskot",
-          artist: "Punomo",
-          url: "https://www.youtube-nocookie.com/embed/xLEXmApp5Iw",
-        },
-        {
-          id: "onnikaantyy",
-          title: "Onni kääntyy",
-          artist: "Punomo",
-          url: "https://www.youtube.com/embed/JFemZEYMih8",
-        },
-        {
-          id: "koivutonnesta",
-          title: "Koivut onnesta",
-          artist: "Joana & Bossakopla",
-          url: "https://www.youtube-nocookie.com/embed/Ft9rLyHWGRo",
-        },
-      ],
+      titles: []
     };
+  },
+  mounted() {
+    this.load_titles()
+  },
+  methods: {
+    load_titles() {
+      fetch("http://localhost:3000/titles")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .then((data) => {
+          const results = [];
+          for (const id in data.titles) {
+            console.log(data)
+            results.push({
+              id: data.titles[id].id,
+              title: data.titles[id].title,
+              artist: data.titles[id].artist,
+              url: data.titles[id].url,
+            });
+          }
+          this.titles = results
+        });
+    },
   },
 };
 </script>
