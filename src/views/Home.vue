@@ -2,7 +2,9 @@
   <div class="grid grid-cols-4">
     <navigation-bar class="col-span-4">
       <navigation-item label="Home" link="/" /> |
-      <navigation-item label="About" link="/about" />
+      <navigation-item label="About" link="/about" /> |
+      <button @click="login">Login</button> |
+      <button @click="logout">Logout</button>
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
@@ -33,11 +35,11 @@ export default {
   },
   data() {
     return {
-      titles: []
+      titles: [],
     };
   },
   mounted() {
-    this.load_titles()
+    this.load_titles();
   },
   methods: {
     load_titles() {
@@ -50,7 +52,7 @@ export default {
         .then((data) => {
           const results = [];
           for (const id in data.titles) {
-            console.log(data)
+            console.log(data);
             results.push({
               id: data.titles[id].id,
               title: data.titles[id].title,
@@ -58,7 +60,7 @@ export default {
               url: data.titles[id].url,
             });
           }
-          this.titles = results
+          this.titles = results;
         });
     },
   },
