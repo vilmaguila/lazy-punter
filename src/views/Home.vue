@@ -3,8 +3,14 @@
     <navigation-bar class="col-span-4">
       <navigation-item label="Home" link="/" /> |
       <navigation-item label="About" link="/about" /> |
-      <button @click="login">Login</button> |
-      <button @click="logout">Logout</button>
+      <div v-if="!$auth.loading.value">
+        <button v-if="!$auth.isAuthenticated.value" @click="login">
+          Log in
+        </button>
+        <button v-if="$auth.isAuthenticated.value" @click="logout">
+          Log out
+        </button>
+      </div>
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
@@ -52,7 +58,6 @@ export default {
         .then((data) => {
           const results = [];
           for (const id in data.titles) {
-            console.log(data);
             results.push({
               id: data.titles[id].id,
               title: data.titles[id].title,
@@ -62,6 +67,12 @@ export default {
           }
           this.titles = results;
         });
+    },
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    logout() {
+      this.$auth.logout();
     },
   },
 };
