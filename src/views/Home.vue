@@ -11,6 +11,9 @@
           Log out
         </button>
       </div>
+      <router-link v-if="$auth.isAuthenticated.value" to="profile">
+        Profile
+      </router-link>
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
