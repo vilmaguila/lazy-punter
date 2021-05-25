@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import AboutContact from '../views/about/AboutContact.vue'
 import AboutMission from '../views/about/AboutMission.vue'
 import AboutVision from '../views/about/AboutVision.vue'
+import Profile from '../views/Profile.vue'
+import Auth from '../auth'
 
 const routes = [
   {
@@ -32,6 +34,12 @@ const routes = [
         } 
       }
     ]
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    beforeEnter: Auth.routeGuard,
+    component: Profile
   }
 ]
 
