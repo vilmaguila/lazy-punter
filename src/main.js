@@ -20,6 +20,7 @@ app.component('the-footer', TheFooter)
 async function init() {
   const AuthPlugin = await Auth.init({
     onRedirectCallback: (appState) => {
+      window.history.replaceState({}, document.title, window.location.pathname)
       router.push(
         appState && appState.targetUrl
           ? appState.targetUrl
