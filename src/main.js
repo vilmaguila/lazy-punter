@@ -3,8 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import "./tailwind.css"
-import { setupAuth } from './auth'
-import authConfig from '../auth-config.json'
+import  Auth  from './auth'
 
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseAvenue from '@/components/ui/BaseAvenue.vue'
@@ -18,16 +17,18 @@ app.component('base-avenue', BaseAvenue)
 app.component('base-island', BaseIsland)
 app.component('the-footer', TheFooter)
 
-app.use(store).use(router)
+async function init() {
+  const AuthPlugin = await Auth.init({
+    onRedirectCallback: (appState) => {
+      router.push(
+        appState && appState.targetUrl
+          ? appState.targetUrl
+          : window.location.pathname,
+      )
+    },
+  })
 
-function callbackRedirect(appState) {
-  router.push(
-    appState && appState.targetUrl
-      ? appState.targetUrl
-      : '/'
-  );
+  app.use(AuthPlugin).use(router).use(store).mount('#app')
 }
 
-setupAuth(authConfig, callbackRedirect).then(auth => {
-  app.use(auth).mount('#app')
-})
+init()
