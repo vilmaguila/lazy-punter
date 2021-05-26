@@ -1,7 +1,5 @@
 import createAuth0Client from '@auth0/auth0-spa-js'
 import { computed, reactive, watchEffect } from 'vue'
-import auth_config from '../../auth-config.json'
-
 
 let client
 const state = reactive({
@@ -147,8 +145,8 @@ async function init(options) {
   const { onRedirectCallback, redirectUri = window.location.origin } = options
 
   client = await createAuth0Client({
-    domain: auth_config.domain,
-    client_id: auth_config.client_id,
+    domain: process.env.VUE_APP_DOMAIN,
+    client_id: process.env.VUE_APP_CLIENT_ID,
     redirect_uri: redirectUri,
   })
 
