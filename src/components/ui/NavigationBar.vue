@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav>
     <slot></slot>
   </nav>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.nav {
-  @apply text-center py-4;
+nav {
+  @apply flex flex-row text-center px-2 py-2;
 }
 </style>

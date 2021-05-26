@@ -1,19 +1,21 @@
 <template>
   <div>
-    <div>
-      <img :src="$auth.user.picture" />
-      <h2>{{ $auth.user.name }}</h2>
-      <p>{{ $auth.user.email }}</p>
-    </div>
+    <img :src="$auth.user.value.picture" />
+    <h2>{{ $auth.user.value.name }}</h2>
+    <p>{{ $auth.user.value.email }}</p>
+  </div>
+  <div>
+    <button>Edit</button>
+  </div>
+  --------
 
-    <div>
-      <pre>{{ JSON.stringify($auth.user.value, null, 2) }}</pre>
-    </div>
+  <div>
+    <pre>{{ JSON.stringify($auth.user.value, null, 2) }}</pre>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Profile'
-}
+  name: "Profile",
+};
 </script>
