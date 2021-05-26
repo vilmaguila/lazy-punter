@@ -1,10 +1,15 @@
 <template>
-  <router-link class="nav-item" :to="link">{{ label }}</router-link>
+  <base-nav-item>
+    <router-link class="nav-item" :to="link">{{ label }}</router-link>
+  </base-nav-item>
 </template>
 
 <script>
+import BaseNavItem from "@/components/ui/BaseNavItem.vue";
+
 export default {
   name: "NavigationItem",
+  components: { BaseNavItem },
   props: {
     label: {
       type: String,
@@ -17,9 +22,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss" scoped>
-.nav-item {
-  @apply p-4 text-2xl text-center rounded-2xl hover:bg-gray-200;
-}
-</style>
