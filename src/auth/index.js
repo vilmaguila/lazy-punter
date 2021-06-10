@@ -147,6 +147,7 @@ async function init(options) {
   client = await createAuth0Client({
     domain: process.env.VUE_APP_DOMAIN,
     client_id: process.env.VUE_APP_CLIENT_ID,
+    audience: process.env.VUE_APP_AUTH0_AUDIENCE,
     redirect_uri: redirectUri,
   })
 
