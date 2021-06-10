@@ -6,8 +6,8 @@
 
 <script>
 export default {
-    name: 'BaseAvenue'    
-}
+  name: "BaseAvenue",
+};
 </script>
 
 <style lang="postcss" scoped>
