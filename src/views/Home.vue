@@ -3,12 +3,12 @@
     <navigation-bar class="col-span-4">
       <navigation-item label="Home" link="/" />
       <navigation-item label="About" link="/about" />
-      <login-logout-button></login-logout-button>
       <navigation-item
         v-if="$auth.isAuthenticated.value"
         label="Profile"
         link="/profile"
       ></navigation-item>
+      <login-logout-button></login-logout-button>
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
@@ -53,7 +53,7 @@ export default {
       fetch("http://localhost:3000/api/titles", {
         headers: {
           Authorization: `Bearer ${token}`,
-        }
+        },
       })
         .then((response) => {
           if (response.ok) {
@@ -79,6 +79,6 @@ export default {
 
 <style lang="postcss" scoped>
 .home {
-  @apply grid grid-cols-4 mx-8 my-2
+  @apply grid grid-cols-4 mx-8 my-2;
 }
 </style>

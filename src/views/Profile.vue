@@ -2,7 +2,7 @@
   <div class="profile">
     <navigation-bar class="col-span-4">
       <navigation-item label="Back" link="/"> </navigation-item>
-      <login-logout-button></login-logout-button>
+      <login-logout-button class="loginout"></login-logout-button>
     </navigation-bar>
     <base-avenue class="col-span-4">
       <div>
@@ -33,5 +33,9 @@ export default {
 <style lang="postcss" scoped>
 .profile {
   @apply grid grid-cols-4 mx-8 my-2;
+}
+
+.loginout {
+  @apply justify-self-end
 }
 </style>

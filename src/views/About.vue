@@ -3,12 +3,12 @@
     <navigation-bar class="col-span-4">
       <navigation-item label="Home" link="/" />
       <navigation-item label="About" link="/about" />
-      <login-logout-button></login-logout-button>
       <navigation-item
         v-if="$auth.isAuthenticated.value"
         label="Profile"
         link="/profile"
       ></navigation-item>
+      <login-logout-button></login-logout-button>
     </navigation-bar>
 
     <base-avenue>
@@ -69,5 +69,9 @@ export default {
 <style lang='postcss' scoped>
 .about {
   @apply grid grid-cols-4 mx-8 my-2;
+}
+
+login-logout-button {
+  @apply font-bold
 }
 </style>
