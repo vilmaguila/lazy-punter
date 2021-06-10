@@ -48,8 +48,13 @@ export default {
     this.load_titles();
   },
   methods: {
-    load_titles() {
-      fetch("http://localhost:3000/titles")
+    async load_titles() {
+      const token = await this.$auth.getTokenSilently();
+      fetch("http://localhost:3000/api/titles", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
         .then((response) => {
           if (response.ok) {
             return response.json();
