@@ -1,14 +1,14 @@
 <template>
-  <div class="grid grid-cols-4">
+  <div class="home">
     <navigation-bar class="col-span-4">
       <navigation-item label="Home" link="/" />
       <navigation-item label="About" link="/about" />
-      <navigation-button></navigation-button>
       <navigation-item
         v-if="$auth.isAuthenticated.value"
         label="Profile"
         link="/profile"
       ></navigation-item>
+      <login-logout-button></login-logout-button>
     </navigation-bar>
     <the-hero class="col-span-4">Löydä vireesi täältä</the-hero>
     <div>This is for SideBar</div>
@@ -27,7 +27,7 @@
 import NavigationBar from "../components/ui/NavigationBar.vue";
 import TheHero from "@/components/layout/TheHero.vue";
 import NavigationItem from "@/components/ui/NavigationItem.vue";
-import NavigationButton from "@/components/ui/NavigationButton.vue";
+import LoginLogoutButton from "@/components/ui/LoginLogoutButton.vue";
 import YoutubeCard from "@/components/home/YoutubeCard.vue";
 
 export default {
@@ -36,7 +36,7 @@ export default {
     NavigationBar,
     TheHero,
     NavigationItem,
-    NavigationButton,
+    LoginLogoutButton,
     YoutubeCard,
   },
   data() {
@@ -53,7 +53,7 @@ export default {
       fetch("http://localhost:3000/api/titles", {
         headers: {
           Authorization: `Bearer ${token}`,
-        }
+        },
       })
         .then((response) => {
           if (response.ok) {
@@ -76,3 +76,9 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.home {
+  @apply grid grid-cols-4 mx-8 my-2;
+}
+</style>

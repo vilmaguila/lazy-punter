@@ -1,6 +1,8 @@
 <template>
   <base-nav-item>
-    <router-link class="nav-item" :to="link">{{ label }}</router-link>
+    <router-link :to="link">
+      <button>{{ label }}</button>
+    </router-link>
   </base-nav-item>
 </template>
 

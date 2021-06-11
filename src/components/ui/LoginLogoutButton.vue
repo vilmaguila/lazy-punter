@@ -9,7 +9,7 @@
 import BaseNavItem from "@/components/ui/BaseNavItem.vue";
 
 export default {
-  name: "NavigationButton",
+  name: "LoginLogoutButton",
   components: { BaseNavItem },
   methods: {
     login() {

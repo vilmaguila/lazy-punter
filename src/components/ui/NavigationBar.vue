@@ -14,6 +14,6 @@ export default {
 
 <style lang="postcss" scoped>
 nav {
-  @apply flex flex-row text-center px-2 py-2;
+  @apply flex flex-row text-center justify-center px-2 py-2;
 }
 </style>
